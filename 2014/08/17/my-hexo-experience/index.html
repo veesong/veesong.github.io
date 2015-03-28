@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo使用心得 | 闲逛</title>
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0, width=device-width">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="description" content="先来说说为什么我会用hexo写博客
+
+
+因为最近对node.js产生了兴趣，通过学习一些node源码来了解node开发
+之前一直没有用过git，hexo基于github来写博客同时可以用git来对hexo源码进行跟进和改进，感觉可以让自己对git的实际运用有所帮助
+还有一个就是最根本的原因，我本来就想自己搞一个独立博客，恰巧发现hexo的方案非常优雅（之前我本来用JavaEE+vps方案，整体的设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo使用心得">
+<meta property="og:url" content="http://xxgg.co/2014/08/17/my-hexo-experience/index.html">
+<meta property="og:site_name" content="闲逛">
+<meta property="og:description" content="先来说说为什么我会用hexo写博客
+
+
+因为最近对node.js产生了兴趣，通过学习一些node源码来了解node开发
+之前一直没有用过git，hexo基于github来写博客同时可以用git来对hexo源码进行跟进和改进，感觉可以让自己对git的实际运用有所帮助
+还有一个就是最根本的原因，我本来就想自己搞一个独立博客，恰巧发现hexo的方案非常优雅（之前我本来用JavaEE+vps方案，整体的设">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo使用心得">
+<meta name="twitter:description" content="先来说说为什么我会用hexo写博客
+
+
+因为最近对node.js产生了兴趣，通过学习一些node源码来了解node开发
+之前一直没有用过git，hexo基于github来写博客同时可以用git来对hexo源码进行跟进和改进，感觉可以让自己对git的实际运用有所帮助
+还有一个就是最根本的原因，我本来就想自己搞一个独立博客，恰巧发现hexo的方案非常优雅（之前我本来用JavaEE+vps方案，整体的设">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.mini.css" type="text/css">
+<link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/maybe-code-highlight.css" type="text/css">
+  
+</head>
+<body>
+  <div class="container">
+    
+<div class="navbar center" role="navigation">
+
+<div class="art-page">
+<h2>Hexo使用心得</h2>
+<div class="art-date">2014.08.17</div>
+</div>
+
+</div>
+    <div id="wrap">
+    <div class="art-page">
+<div class="content">
+<p>先来说说为什么我会用hexo写博客</p>
+<blockquote>
+<ul>
+<li>因为最近对node.js产生了兴趣，通过学习一些node源码来了解node开发</li>
+<li>之前一直没有用过git，hexo基于github来写博客同时可以用git来对hexo源码进行跟进和改进，感觉可以让自己对git的实际运用有所帮助</li>
+<li>还有一个就是最根本的原因，我本来就想自己搞一个独立博客，恰巧发现hexo的方案非常优雅（之前我本来用JavaEE+vps方案，整体的设计和现在的hexo博客差不多，代码都写好了，只是一直感觉网站备案问题比较麻烦就没去搞）</li>
+</ul>
+</blockquote>
+<p>如何开始hexo搭建，可以参照这篇文章<a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a>。照着这篇文章去做，基本上就没问题了，我也不想重复发明轮子，写一些类似hexo入门的文章。</p>
+<p>当然，我还是要说说我在使用hexo的过程中获得了什么，以及我建立这个博客的方式是怎样的。</p>
+<p>因为我一直以来几乎是JavaEE全栈式开发，所以我也会负责前端的开发工作，在前端页面渲染的时候经常会写类似于如下的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html = <span class="string">""</span>;</span><br><span class="line">html+=<span class="string">"&lt;h1&gt;"</span>+data.title+<span class="string">"&lt;/h1&gt;"</span>;</span><br><span class="line">html+=<span class="string">"&lt;ul&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;data.o.length; i++) &#123;</span><br><span class="line">  html += <span class="string">"&lt;li&gt;&lt;a href='"</span></span><br><span class="line">       + data.o[i] + <span class="string">"'&gt;"</span>;</span><br><span class="line">  html += data.o[i]+<span class="string">"&lt;/a&gt;&lt;/li&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">html += <span class="string">"&lt;/ul&gt;"</span>;</span><br></pre></td></tr></table></figure>
+<p>hexo使用了EJS模板引擎，那么上面的代码就如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&lt;%= title %&gt;&lt;/h1&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;% </span><br><span class="line">  for(i=0; i&lt;o.length; i++) &#123; </span><br><span class="line">  %&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;a href='&lt;%= o[i] %&gt;'&gt;</span><br><span class="line">        &lt;%= o[i] %&gt;</span><br><span class="line">      &lt;/a&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p>可以发现这几乎和Jsp一样，也就是说hexo使用EJS模板引擎让静态的html开发变成了类似于我所熟悉的动态Jsp开发一样。当然EJS不仅仅用于后端node开发，同样可以放到前端的html中（毕竟是js，放到浏览器就可以执行），这让我不再如以前的前端开发时写一些难于维护的js代码了，现在写一个.ejs文件的模版即可。</p>
+<p>hexo使用了stylus的css预处理器，我之前也有了解到如sass和less这样的预处理器，但毕竟习惯一旦养成改起来困难，一直以来我前端开发都是习惯直接写css，在制作我现在您所看到的博客主题时并没有用到stylus相关的东西。不过css预处理器的出现是有其道理的，在今后对hexo的探索中我想我会逐渐转到使用stylus中。</p>
+<p>既然说到css，那当然是和制作主题相关了。一开始我也不知道该如何对主题进行更加个性化的修改，因为我发现下载下来的主题大都是stylus写成，上面我也说了我习惯直接写css，直到我看到这篇文章：<a href="http://www.maintao.com/hexo-theme-from-scratch/" target="_blank" rel="external">从零开始定制hexo主题</a>。与其修改其他的主题里面自己不熟悉的东西（因为你不知道改一个地方会不会改出其他问题），不如直接自己来做主题。通过上面这篇文章和参考<a href="http://hexo.io/docs/themes.html" target="_blank" rel="external">官方文档</a>，最终如您所见，主题就是这个样子了。</p>
+<p>基础的东西该搭建的都搭建完了，是时候开始写文章了。我是直接用记事本写文章的，我觉得用markdown写文章真的是我见过最优雅的方式，这赋予了像记事本这种纯文本编辑器强大的排版功能，因为像写html/js/css这些东西我一直以来也都是用记事本，也许正因为这样，从用html这种复杂的排版到用markdown排版的时候，我突然觉得从未有过的畅快。至于markdown，我觉得不用学，每当我不知道怎么排版的时候我都会打开<a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Cmd Markdown</a>这个网站，然后找到想要的照着做就行了。markdown还算简单，用多了就熟了。</p>
+<p>hexo心得目前暂时就这些，对于我这个程序猿来说，喜欢追求优雅的去实现各种程序和功能，而hexo用一种很优雅的方式让你建立博客、写博客，我对hexo的作者<a href="https://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>表示非常敬佩。</p>
+
+</div>
+
+</div>
+<script>
+
+function setSize(obj) {
+    for(i=0;i<obj.length;i++) {
+    	if(obj[i].className) {
+	        obj[i].style.width = '100%';
+	        obj[i].style.height = obj[i].offsetWidth * 0.7 + 'px';
+    	}
+    }
+}
+var o = document.getElementsByTagName("iframe");
+o && setSize(o);
+
+function toggleCommonts() {
+    var obj = document.getElementById("comments");
+    if(obj.style.display=="none") {obj.style.display="block";document.location.href="#comments"}
+    else{obj.style.display="none"}
+}
+function iFrameHeight() { 
+	var ifm= document.getElementById("music"); 
+	var subWeb = document.frames ? document.frames["music"].document : ifm.contentDocument; 
+	var h = arguments[0];
+	if(ifm != null && subWeb != null) { 
+		h || (h = subWeb.body.clientHeight);
+		ifm.height = h; 
+	} 
+} 
+</script>
+    </div>
+    
+    <h4 class="text-center more-info">
+    <a href="javascript:toggleCommonts();"><i class="fa fa-comments"></i> 评论</a>
+    <a href="/" style="margin-left:18px;"><i class="fa fa-list"></i> 更多文章</a>
+    <a href="/about" style="margin-left:18px;"><i class="fa fa-flag"></i> 关于</a>
+    </h4>
+    
+    <div class="foot-part">
+    
+    
+<div style="display:none;" id="comments" name="comments">
+<div class="ds-thread" data-thread-key="2014/08/17/my-hexo-experience/" data-title="Hexo使用心得" data-url="http://xxgg.co/2014/08/17/my-hexo-experience/" ></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xgxg"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+</div>
+
+    
+    <div id="footer">
+<div class="container">
+<p class="text-muted text-center"><a href="/">闲逛</a> © 2014 • produce by <a class="text-muted" href="http://veesong.github.io">Veesong</a></p>
+</div>
+</div>
+    </div>
+  </div>
+  <div style="display:none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fabc28c8557d463741f768ba0d294c671' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</body>
+</html>

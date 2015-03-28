@@ -1,0 +1,92 @@
+body figure.highlight {
+  background: #474949;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+body figure.highlight table {
+  background: #474949;
+}
+body figure.highlight .gutter pre {
+  font-family: Consolas, "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+  color: #81a2be;
+  font-size: 14px;
+  line-height: 16px;
+  min-width: 20px;
+}
+body figure.highlight .code pre {
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0.5em;
+  display: block;
+  color: #d1d9e1;
+
+}
+body figure.highlight .code pre .comment,
+body figure.highlight .code pre .doctype,
+body figure.highlight .code pre .javadoc {
+  color: #909090;
+}
+body figure.highlight .code pre .keyword,
+body figure.highlight .code pre .clojure .attribute,
+body figure.highlight .code pre .winutils,
+body figure.highlight .code pre .javascript .title,
+body figure.highlight .code pre .addition,
+body figure.highlight .code pre .css .tag {
+  color: #c9c;
+}
+body figure.highlight .code pre .number {
+  color: #f99157;
+}
+body figure.highlight .code pre .line {
+  height:16px;
+}
+body figure.highlight .code pre .command,
+body figure.highlight .code pre .string,
+body figure.highlight .code pre .tag .value,
+body figure.highlight .code pre .regexp,
+body figure.highlight .code pre .hexcolor {
+  color: #8abeb7;
+}
+body figure.highlight .code pre .title,
+body figure.highlight .code pre .localvars,
+body figure.highlight .code pre .identifier {
+  color: #b5bd68;
+}
+body figure.highlight .code pre .class .keyword {
+  color: #f2777a;
+}
+body figure.highlight .code pre .constant,
+body figure.highlight .code pre .class .title,
+body figure.highlight .code pre .parent,
+body figure.highlight .code pre .highlight .id,
+body figure.highlight .code pre .clojure .title .built_in {
+  color: #fc6;
+}
+body figure.highlight .code pre .tag .title,
+body figure.highlight .code pre .rules .property,
+body figure.highlight .code pre .clojure .title .built_in {
+  font-weight: bold;
+}
+body figure.highlight .code pre .attribute {
+  color: #81a2be;
+}
+body figure.highlight .code pre .preprocessor,
+body figure.highlight .code pre .pragma,
+body figure.highlight .code pre .pi,
+body figure.highlight .code pre .shebang,
+body figure.highlight .code pre .symbol,
+body figure.highlight .code pre .symbol .string,
+body figure.highlight .code pre .special,
+body figure.highlight .code pre .attr_selector,
+body figure.highlight .code pre .important,
+body figure.highlight .code pre .subst,
+body figure.highlight .code pre .cdata {
+  color: #f99157;
+}
+body figure.highlight .code pre .deletion {
+  color: #dc322f;
+}
+body figure.highlight .code pre .tex .formula {
+  background: #eee8d5;
+}
